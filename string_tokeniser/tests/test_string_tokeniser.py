@@ -68,5 +68,18 @@ class TestStringTokeniser(unittest.TestCase):
         # Assert
         self.assertEqual(expected_result, actual_result)
 
+    def test_string_of_compound_items_with_no_result_list_of_many_items(self):
+        # AAA in testing - Arrange, Act, Assert
+        # Arrange
+        input_val = "java byte code,csharp,python"
+        expected_result = ["java byte code", "csharp", "python"]
+        cut = StringTokeniser() # Class Under Test
+
+        # Act
+        actual_result = cut.tokenise(input_val)
+
+        # Assert
+        self.assertEqual(expected_result, actual_result)
+
 if __name__ == "__main__":
     unittest.main()
