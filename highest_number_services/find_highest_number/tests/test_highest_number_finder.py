@@ -1,4 +1,5 @@
 import unittest
+from app.highest_number_finder import HighestNumberFinder
 
 class TestHighestNumberFinder(unittest.TestCase):
     def test_find_highest_in_list_of_one_expect_single_item(self):
