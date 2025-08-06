@@ -55,5 +55,18 @@ class TestStringTokeniser(unittest.TestCase):
         # Assert
         self.assertEqual(expected_result, actual_result)
 
+    def test_string_of_one_items_with_spaces_result_list_of_one_item_no_spaces(self):
+        # AAA in testing - Arrange, Act, Assert
+        # Arrange
+        input_val = " csharp "
+        expected_result = ["csharp"]
+        cut = StringTokeniser() # Class Under Test
+
+        # Act
+        actual_result = cut.tokenise(input_val)
+
+        # Assert
+        self.assertEqual(expected_result, actual_result)
+
 if __name__ == "__main__":
     unittest.main()
