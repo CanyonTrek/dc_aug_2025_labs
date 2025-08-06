@@ -4,4 +4,4 @@ class StringTokeniser:
         if not input_val:
             return []
         tokens = input_val.split(",") # Returns a LIST
-        return [ token.strip() for token in tokens ]
+        return [ token.strip() for token in tokens if token.strip() ]
