@@ -50,5 +50,18 @@ class TestHighestNumberFinder(unittest.TestCase):
         # Assert
         self.assertEqual(expected_result, actual_result)
 
+    def test_find_empty_list_throws_exception(self):
+        # Arrange
+        numbers = []
+        # expected_result = 11
+        cut = HighestNumberFinder() # Class Under Test
+
+        # Act
+        actual_result = self.assertRaises(ValueError, cut.find_highest_number, numbers)
+
+        # Assert
+        self.assertIsNone(actual_result)
+
+
 if __name__ == "__main__":
     unittest.main()
