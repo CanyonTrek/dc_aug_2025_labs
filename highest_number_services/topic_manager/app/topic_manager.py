@@ -1,6 +1,4 @@
-#! /usr/bin/env python3
-# Author: DCameron
-# Description: This script will demo
-"""
-    Docstring:
-"""
+class TopicManager:
+    def find_topic_high_scores(self, topic_score_list):
+        top_scores = []
+        return top_scores
