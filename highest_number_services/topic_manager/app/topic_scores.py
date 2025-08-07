@@ -6,5 +6,5 @@ class TopicScores:
     def get_topic_name(self):
         return self._topic_name
 
-    def get_score(self):
+    def get_scores(self):
         return self._scores
