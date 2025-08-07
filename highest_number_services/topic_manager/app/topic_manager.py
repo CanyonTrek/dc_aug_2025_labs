@@ -8,8 +8,10 @@ from app.highest_number_finder import HighestNumberFinder
 from topic_top_score import TopicTopScore
 
 class TopicManager:
-    def __init__(self):
-        self._highest_number_finder = HighestNumberFinder()
+    def __init__(self, highest_number_finder=None):
+        if highest_number_finder is None:
+            highest_number_finder = HighestNumberFinder()
+        self._highest_number_finder = highest_number_finder
 
 
     def find_topic_high_scores(self, topic_scores_list):
