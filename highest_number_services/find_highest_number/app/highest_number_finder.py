@@ -4,6 +4,9 @@ class HighestNumberFinder:
         if not numbers:
             return None
         highest_so_far = numbers[0]
-        if len(numbers) > 1 and numbers[1] > highest_so_far:
-            highest_so_far = numbers[1]
+
+        # Iterate through all the items using an ITERATOR loop.
+        for number in numbers:
+            if number > highest_so_far:
+                highest_so_far = number
         return highest_so_far
