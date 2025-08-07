@@ -1,0 +1,19 @@
+{
+    "tests_by_mangled_function_name": {
+        "app.highest_number_finder.x\u01c1HighestNumberFinder\u01c1find_highest_number": [
+            "tests/test_highest_number_finder.py::TestHighestNumberFinder::test_find_highest_in_list_of_two_descending_expect_first_item",
+            "tests/test_highest_number_finder.py::TestHighestNumberFinder::test_find_highest_in_list_of_many_expect_highest_item",
+            "tests/test_highest_number_finder.py::TestHighestNumberFinder::test_find_highest_in_list_of_one_expect_single_item",
+            "tests/test_highest_number_finder.py::TestHighestNumberFinder::test_find_highest_in_list_of_two_ascending_expect_second_item",
+            "tests/test_highest_number_finder.py::TestHighestNumberFinder::test_find_empty_list_throws_exception"
+        ]
+    },
+    "duration_by_test": {
+        "tests/test_highest_number_finder.py::TestHighestNumberFinder::test_find_empty_list_throws_exception": 0.0001265759999569127,
+        "tests/test_highest_number_finder.py::TestHighestNumberFinder::test_find_highest_in_list_of_many_expect_highest_item": 0.00015398599998661666,
+        "tests/test_highest_number_finder.py::TestHighestNumberFinder::test_find_highest_in_list_of_one_expect_single_item": 0.0001270530000283543,
+        "tests/test_highest_number_finder.py::TestHighestNumberFinder::test_find_highest_in_list_of_two_ascending_expect_second_item": 0.00010499699999400036,
+        "tests/test_highest_number_finder.py::TestHighestNumberFinder::test_find_highest_in_list_of_two_descending_expect_first_item": 0.00016290000002072702
+    },
+    "stats_time": 0.23874280000000003
+}

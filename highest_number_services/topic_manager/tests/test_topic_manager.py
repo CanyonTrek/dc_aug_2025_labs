@@ -76,8 +76,8 @@ class TestTopicManager(unittest.TestCase):
 
         expected_result = [
             TopicTopScore("Physics", 89),
-            TopicTopScore("Art", 87),
-            TopicTopScore("Comp Sci", 97)
+            TopicTopScore("Art", 89),
+            TopicTopScore("Comp Sci", 89)
         ]
 
         hnf_stub = StubHighestNumberFinder()

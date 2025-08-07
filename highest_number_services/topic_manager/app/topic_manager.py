@@ -13,7 +13,6 @@ class TopicManager:
             highest_number_finder = HighestNumberFinder()
         self._highest_number_finder = highest_number_finder
 
-
     def find_topic_high_scores(self, topic_scores_list):
         top_scores = []
 
