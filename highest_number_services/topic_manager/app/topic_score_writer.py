@@ -7,6 +7,7 @@ class TopicScoreWriter:
         self._file_writer = file_writer
 
     def write_scores(self, top_scores, filename="output.txt"):
-        tts = top_scores[0]
-        data_to_write = f"{tts.get_topic_name()}, {tts.get_top_score()}"
-        self._file_writer.write_line(data_to_write)
+        if top_scores:
+            tts = top_scores[0]
+            data_to_write = f"{tts.get_topic_name()}, {tts.get_top_score()}"
+            self._file_writer.write_line(data_to_write)
