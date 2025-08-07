@@ -2,7 +2,7 @@ class HighestNumberFinder:
     def find_highest_number(self, numbers):
         """ Return the highest number from the list """
         if not numbers:
-            return None
+            raise ValueError("Empty List")
         highest_so_far = numbers[0]
 
         # Iterate through all the items using an ITERATOR loop.
