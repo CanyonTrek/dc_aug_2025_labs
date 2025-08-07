@@ -1,4 +1,5 @@
 import unittest
+from unittest.mock import Mock
 
 import os
 import sys
@@ -69,14 +70,14 @@ class TestTopicManager(unittest.TestCase):
 
         topic_scores = [
             TopicScores("Physics", physics_scores),
-            TopicTopScore("Art", art_scores),
-            TopicTopScore("Comp Sci", compsci_scores)
+            TopicScores("Art", art_scores),
+            TopicScores("Comp Sci", compsci_scores)
         ]
 
         expected_result = [
-            TopicScores("Physics", 89),
-            TopicTopScore("Art", 89),
-            TopicTopScore("Comp Sci", 89)
+            TopicTopScore("Physics", 89),
+            TopicTopScore("Art", 87),
+            TopicTopScore("Comp Sci", 97)
         ]
 
         hnf_stub = StubHighestNumberFinder()
@@ -90,6 +91,36 @@ class TestTopicManager(unittest.TestCase):
             self.assertEqual(expected_result[i].get_topic_name(), actual_result[i].get_topic_name())
             self.assertEqual(expected_result[i].get_top_score(), actual_result[i].get_top_score())
 
+    def test_find_highest_score_with_list_of_many_returns_list_of_many_using_mocks(self):
+        # Arrange
+        physics_scores = [56, 67, 43, 89]
+        art_scores = [87, 66, 78]
+        compsci_scores = [45, 88, 97, 56]
+
+        topic_scores = [
+            TopicScores("Physics", physics_scores),
+            TopicScores("Art", art_scores),
+            TopicScores("Comp Sci", compsci_scores)
+        ]
+
+        expected_result = [
+            TopicTopScore("Physics", 89),
+            TopicTopScore("Art", 87),
+            TopicTopScore("Comp Sci", 97)
+        ]
+
+        # Create mock object for HighestNUmberFinder
+        hnf_mock = Mock()
+        hnf_mock.find_highest_number.side_effect = [89, 87, 97]
+        cut = TopicManager(hnf_mock)
+
+        # Act
+        actual_result = cut.find_topic_high_scores(topic_scores)
+
+        # Assert
+        for (res, exp) in zip(actual_result, expected_result):
+            self.assertEqual(exp.get_topic_name(), res.get_topic_name())
+            self.assertEqual(exp.get_top_score(), res.get_top_score())
 
 if __name__ == "__main__":
     unittest.main()
