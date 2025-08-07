@@ -38,5 +38,21 @@ class TestTopicManager(unittest.TestCase):
         self.assertEqual(expected_result[0].get_topic_name(), actual_result[0].get_topic_name())
         self.assertEqual(expected_result[0].get_top_score(), actual_result[0].get_top_score())
 
+    def test_find_highest_score_with_list_of_one_topic_using_stub(self):
+        # Arrange
+        scores = [56, 67, 43, 89]
+        topic_name = "Physics"
+        topic_scores = [TopicScores(topic_name, scores)]
+        expected_result = [TopicTopScore(topic_name, 89)]
+        cut = TopicManager()
+
+        # Act
+        actual_result = cut.find_topic_high_scores(topic_scores)
+
+        # Assert
+        self.assertEqual(expected_result[0].get_topic_name(), actual_result[0].get_topic_name())
+        self.assertEqual(expected_result[0].get_top_score(), actual_result[0].get_top_score())
+
+
 if __name__ == "__main__":
     unittest.main()
