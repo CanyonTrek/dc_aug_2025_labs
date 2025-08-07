@@ -1,8 +1,14 @@
 import unittest
+
+import os
+import sys
+
+#mpath = os.path.abspath(os.path.join(os.path.dirname(__file__), "..", "app"))
+#sys.path.insert(0, mpath)
+
 from topic_manager.app.topic_manager import TopicManager
 from topic_manager.app.topic_scores import TopicScores
 from topic_manager.app.topic_top_score import TopicTopScore
-
 
 class TestTopicManager(unittest.TestCase):
     def test_find_highest_score_in_empty_list_returns_empty_list(self):
