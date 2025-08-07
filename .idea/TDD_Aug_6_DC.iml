@@ -2,6 +2,9 @@
 <module type="PYTHON_MODULE" version="4">
   <component name="NewModuleRootManager">
     <content url="file://$MODULE_DIR$">
+      <sourceFolder url="file://$MODULE_DIR$/highest_number_services" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/highest_number_services/find_highest_number" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/string_tokeniser/app" isTestSource="false" />
       <excludeFolder url="file://$MODULE_DIR$/.venv" />
     </content>
     <orderEntry type="inheritedJdk" />
