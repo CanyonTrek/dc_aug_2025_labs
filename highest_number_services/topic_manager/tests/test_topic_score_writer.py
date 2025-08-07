@@ -21,5 +21,18 @@ class TestTopicScoreWriter(unittest.TestCase):
         # Assert
         mock_file_writer.write_line.assert_called_once_with(expected_result)
 
+    def test_verify_topic_score_details_not_written(self):
+        # Arrange
+        top_scores = [] # Empty list to simulate no scores!
+
+        mock_file_writer = Mock()
+        cut = TopicScoreWriter(mock_file_writer)
+
+        # Act
+        cut.write_scores(top_scores)
+
+        # Assert
+        mock_file_writer.write_line.assert_not_called()
+
 if __name__ == "__main__":
     unittest.main()
